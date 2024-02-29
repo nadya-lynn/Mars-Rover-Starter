@@ -9,4 +9,16 @@ describe("Command class", function() {
     expect( function() { new Command();}).toThrow(new Error('Command type required.'));
   });
 
+// Test 2:  tests that constructor in the Command class correctly cets the CommandType property in the new object. MODE_CHANGE and MOVE are passed in commandType.
+  it("constructor sets command type", function() {
+    let object = new Command("commandType");
+    expect(object.commandType).toContain("commandType");
+  })
+
+// Test 3: tests that the constructor correctly sets the value property in the new object. LOW_POWER and 12000 are passed in the value.  STATUS_CHECK takes no value. 
+  it("constructor sets a value passed in as the 2nd argument", function() {
+    let object = new Command("commandType", "value");
+    expect(object.value).toContain("value");
+  })
+  
 });
